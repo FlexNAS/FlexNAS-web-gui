@@ -1,0 +1,14 @@
+[Unit]
+Description=NAS Web GUI Backend
+After=network.target
+
+[Service]
+User=www-data
+Group=www-data
+WorkingDirectory=/var/www/nas-web-gui/backend
+Environment="PATH=/var/www/nas-web-gui/backend/venv/bin"
+ExecStart=/var/www/nas-web-gui/backend/venv/bin/python app.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target 
